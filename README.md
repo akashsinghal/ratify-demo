@@ -17,11 +17,11 @@ This demo requires the prerequisites above be installed before running ANY of th
 ## How it Works
 
 Start by running the setup-env.sh script which:
-    - starts a local registry
-    - builds an image to be signed using the [wabbit networks](https://github.com/wabbit-networks/net-monitor) Dockerfile
-    - builds an image that will NOT be signed using alpine base image
-    - generates a test key pair and signs image using notation
-    - configure and create a local Kind K8s cluster
+- starts a local registry
+- builds an image to be signed using the [wabbit networks](https://github.com/wabbit-networks/net-monitor) Dockerfile
+- builds an image that will NOT be signed using alpine base image
+- generates a test key pair and signs image using notation
+- configure and create a local Kind K8s cluster
 
 The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. It then applies the policy constraints and then deploys the signed/unsigned images.
 
