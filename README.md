@@ -25,7 +25,7 @@ Start by running the setup-env.sh script which:
 
 The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. It then applies the policy constraints and then deploys the signed/unsigned images.
 
-[![asciicast](https://asciinema.org/a/n5tpyGI6Y6KblhsUNioug029U.png)](https://asciinema.org/a/n5tpyGI6Y6KblhsUNioug029U?autoplay=1&loop=1)
+![](screengif.gif)
 
 ## Credits
 Based on ORAS demos by @sajayantony and @thockin's [micro-demos](https://github.com/thockin/micro-demos)
