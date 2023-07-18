@@ -19,10 +19,10 @@ run "kubectl apply -f template.yaml"
 run "kubectl apply -f constraint.yaml"
 
 desc "View the Ratify constraint"
-run "code constraint.yaml"
+run "yq constraint.yaml"
 
 desc "View the Ratify constraint template"
-run "code template.yaml"
+run "yq template.yaml"
 
 desc "Install Ratify in local cluster"
 run "helm repo add ratify https://deislabs.github.io/ratify"
