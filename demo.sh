@@ -29,10 +29,10 @@ run "helm repo add ratify https://deislabs.github.io/ratify"
 run "helm install ratify ratify/ratify --atomic --namespace gatekeeper-system --set-file notaryCert=~/.config/notation/localkeys/ratify-demo.crt --set featureFlags.RATIFY_CERT_ROTATION=true --set oras.useHttp=true"
 
 desc "Run a signed image"
-run "kubectl run demo --image=localhost:5000/demo:signed"
+run "kubectl run demo --image=registry:5000/demo:signed"
 
 desc "Run an unsigned image"
-run "kubectl run demo2 --image=localhost:5000/demo:unsigned"
+run "kubectl run demo2 --image=registry:5000/demo:unsigned"
 
 desc "Check the Ratify logs"
 run "kubectl logs deployment/ratify -n gatekeeper-system"

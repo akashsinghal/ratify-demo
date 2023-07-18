@@ -14,6 +14,7 @@ docker push localhost:5000/demo:signed
 
 printf 'FROM alpine\nCMD ["echo", "test unsigned image"]' > Dockerfile
 docker build --no-cache -t localhost:5000/demo:unsigned .
+rm Dockerfile
 docker push localhost:5000/demo:unsigned
 
 rm -rf ~/.config/notation
