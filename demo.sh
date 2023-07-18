@@ -12,7 +12,7 @@ run "oras discover --plain-http localhost:5000/demo:unsigned"
 
 desc "Install Gatekeeper on local cluster"
 run "helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts"
-run "helm install gatekeeper/gatekeeper  --name-template=gatekeeper --namespace gatekeeper-system --create-namespace --set enableExternalData=true --set validatingWebhookTimeoutSeconds=5 --set mutatingWebhookTimeoutSeconds=2"
+run "helm install gatekeeper/gatekeeper  --name-template=gatekeeper --namespace gatekeeper-system --create-namespace --set auditInterval=0 --set enableExternalData=true --set validatingWebhookTimeoutSeconds=5 --set mutatingWebhookTimeoutSeconds=2"
 
 desc "Apply the Ratify constraints"
 run "kubectl apply -f template.yaml"
