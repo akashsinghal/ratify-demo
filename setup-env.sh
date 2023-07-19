@@ -19,7 +19,7 @@ docker push localhost:5000/demo:unsigned
 
 rm -rf ~/.config/notation
 notation cert generate-test --default "ratify-demo"
-notation sign --insecure-registry localhost:5000/demo:signed
+notation sign localhost:5000/demo:signed
 
 printf 'kind: Cluster\napiVersion: kind.x-k8s.io/v1alpha4\ncontainerdConfigPatches:\n- |-\n  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:5000"]\n    endpoint = ["http://registry:5000"]' > kind_config.yaml
 

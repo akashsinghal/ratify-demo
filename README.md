@@ -4,6 +4,7 @@ This repository contains a demo of Ratify as an external data provider for Gatek
 
 ## Prerequisites
 - [pv](https://ss64.com/bash/pv.html)
+- [socat](https://linux.die.net/man/1/socat)
 - [kubectl](https://kubernetes.io/docs/reference/kubectl/)
 - [kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 - [docker](https://docs.docker.com/get-docker/)
@@ -16,7 +17,9 @@ This demo requires the prerequisites above be installed before running ANY of th
 
 ## How it Works
 
-Start by running the setup-env.sh script which:
+Run the the [registry-forwarding.sh](registry-forwarding.sh) script to forward traffic to the registry container as TCP.
+
+Run the [setup-env.sh](setup-env.sh) script which:
 - starts a local registry
 - builds an image to be signed using the [wabbit networks](https://github.com/wabbit-networks/net-monitor) Dockerfile
 - builds an image that will NOT be signed using alpine base image
@@ -27,5 +30,7 @@ The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. 
 
 ![](screengif.gif)
 
+Run the [demo-reset.sh](demo-reset.sh) script to delete the demo resources.
+
 ## Credits
-Based on ORAS demos by @sajayantony and @thockin's [micro-demos](https://github.com/thockin/micro-demos)
+Based on @sajayantony's [oras-demos](https://github.com/sajayantony/oras-demos) and @thockin's [micro-demos](https://github.com/thockin/micro-demos)
