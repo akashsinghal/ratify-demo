@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# delete kind cluster
+echo "Deleting kind cluster"
+kind delete cluster --name ratify-demo 2>/dev/null || true
+
 # stop containers
 docker stop registry
 docker stop kind-control-plane
