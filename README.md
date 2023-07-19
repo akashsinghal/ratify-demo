@@ -28,7 +28,7 @@ Run the [setup-env.sh](setup-env.sh) script which:
 
 The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. It then applies the policy constraints and then deploys the signed/unsigned images.
 
-![](screengif.gif)
+![](demo.gif)
 
 Run the [demo-reset.sh](demo-reset.sh) script to delete the demo resources.
 

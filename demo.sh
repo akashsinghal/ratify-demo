@@ -33,11 +33,10 @@ run "yq template.yaml"
 
 desc "Install Ratify in local cluster"
 run "helm repo add ratify https://deislabs.github.io/ratify"
-run "helm install ratify ratify/ratify
+run "helm install ratify ratify/ratify \\
     --atomic \\
     --namespace gatekeeper-system \\
     --set-file notaryCert=~/.config/notation/localkeys/ratify-demo.crt \\
-    --set featureFlags.RATIFY_CERT_ROTATION=true \\
     --set oras.useHttp=true"
 
 desc "Run a signed image"
