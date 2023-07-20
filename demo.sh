@@ -36,7 +36,7 @@ run "helm repo add ratify https://deislabs.github.io/ratify"
 run "helm install ratify ratify/ratify \\
     --atomic \\
     --namespace gatekeeper-system \\
-    --set-file notaryCert=~/.config/notation/localkeys/ratify-demo.crt \\
+    --set-file notaryCert=$(notation cert ls | grep ratify-demo) \\
     --set oras.useHttp=true"
 
 desc "Run a signed image"
