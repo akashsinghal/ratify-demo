@@ -19,7 +19,7 @@ This demo requires the prerequisites above be installed before running ANY of th
 
 Run the the [registry-forwarding.sh](registry-forwarding.sh) script to forward traffic to the registry container as TCP.
 
-Run the [setup-env.sh](setup-env.sh) script which:
+Run the [setup.sh](setup.sh) script which:
 - starts a local registry
 - builds an image to be signed using the [wabbit networks](https://github.com/wabbit-networks/net-monitor) Dockerfile
 - builds an image that will NOT be signed using alpine base image
@@ -30,7 +30,7 @@ The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. 
 
 ![](demo.gif)
 
-Run the [demo-reset.sh](demo-reset.sh) script to delete the demo resources.
+Run the [reset.sh](reset.sh) script to delete the demo resources.
 
 ## Credits
 Based on @sajayantony's [oras-demos](https://github.com/sajayantony/oras-demos) and @thockin's [micro-demos](https://github.com/thockin/micro-demos)
