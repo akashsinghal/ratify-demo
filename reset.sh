@@ -24,3 +24,8 @@ docker network prune -f
 # remove chart repos
 helm repo remove gatekeeper
 helm repo remove ratify
+
+# remove ratify demo certs and keys
+notation cert delete --type ca --store ratify-demo --all
+notation key ls | grep ratify-demo | awk '{ system("notation key delete " $2); system("rm " $3); system("rm " $4);}'
+cat ~/.config/notation/signingkeys.json
