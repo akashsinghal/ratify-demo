@@ -36,4 +36,6 @@ cert_path=$(echo "$key_json" | jq -r .certPath)
 
 # clean up keys
 notation key delete -v $name
+notation cert delete -y --type ca --store $name $name.crt
 rm -v "$key_path" "$cert_path"
+rmdir -v "$config_dir/localkeys" || true
