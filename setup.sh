@@ -39,6 +39,9 @@ CMD ["echo", "test unsigned image"]
 EOF
 docker push localhost:5000/demo:unsigned
 
-rm -rf ~/.config/notation
+
+# reset should have cleaned up the certs
+# if not the following command cleans up all notation keys 💣 !!
+# notation rm -rf ~/.config/notation/   
 notation cert generate-test --default "ratify-demo"
 notation sign localhost:5000/demo:signed

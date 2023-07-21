@@ -24,3 +24,16 @@ docker network prune -f
 # remove chart repos
 helm repo remove gatekeeper
 helm repo remove ratify
+
+# configure
+name="ratify-demo"
+config_dir="$HOME/.config/notation"
+
+# extract paths
+key_json=$(cat "$config_dir/signingkeys.json" | jq ".keys[] | select(.name==\"$name\")")
+key_path=$(echo "$key_json" | jq -r .keyPath)
+cert_path=$(echo "$key_json" | jq -r .certPath)
+
+# clean up keys
+notation key delete -v $name
+rm -v "$key_path" "$cert_path"
