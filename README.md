@@ -32,5 +32,11 @@ The demo will install the Gatekeeper and Ratify chart to the local K8s cluster. 
 
 Run the [reset.sh](reset.sh) script to delete the demo resources.
 
+## Shorter Demo
+
+For a more concise demo that skips installing any dependencies, use `setup-short.sh` to build the demo environment and use `demo-short.sh` to run it.
+
+![](demo-short.gif)
+
 ## Credits
 Based on @sajayantony's [oras-demos](https://github.com/sajayantony/oras-demos) and @thockin's [micro-demos](https://github.com/thockin/micro-demos)
